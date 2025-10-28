@@ -8,7 +8,7 @@ export const routes: Routes = [
             {
                 path:'',
                 loadComponent:()=>
-                    import('./empleados/empleados').then(m=>m.Home)
+                    import('./empleados/empleados').then(m=>m.EmpleadosComponent)
             },
         ]
     }

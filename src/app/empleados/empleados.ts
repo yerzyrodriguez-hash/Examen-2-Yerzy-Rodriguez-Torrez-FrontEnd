@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { Empleadoservice } from '../core/services/empleadoservice';
+import { EmpleadosService } from '../core/services/empleadoservice';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // <-- 1. IMPORTAR FORMSMODULE
 @Component({
-  selector: 'app-home',
+  selector: 'app-empleados',
   imports: [CommonModule, FormsModule],
   templateUrl: './empleados.html',
-  styleUrl: './empleados.scss'
+  styleUrl: './empleados.css'
 })
-export class Home {
+export class EmpleadosComponent {
   //declaramos una variables para recibir la data del backend
   empleados:any[]=[];
   /**
@@ -22,33 +22,33 @@ export class Home {
     salario: 0.0
   };
   // creamo un constructor para llamar a nuestro servicio
-  constructor(private empleadoService:Empleadoservice) {
-        this.listarProductos();
+  constructor(private empleadoService:EmpleadosService) {
+        this.listarEmpleados();
   }
-  //creamos un metodo para listar Empleados desde el servicio
-  listarProductos():void
+  //creamos un metodo para listar productos desde el servicio
+  listarEmpleados():void
   {
     this.empleadoService.listaEmpleados().subscribe({
       next:(data)=> {
         this.empleados = data
         console.log(this.empleados);
       },
-      error:(err)=>console.error('error al cargar Empleados',err)
+      error:(err)=>console.error('error al cargar productos',err)
     })
   }
 
   // Método para manejar el envío del formulario -----------------------
-  guardarProducto(): void {
+  guardarEmpleado(): void {
     // Llama al servicio con los datos del formulario
     this.empleadoService.crearEmpleado(this.nuevoEmpleado).subscribe({
       next: (data) => {
-        console.log('Empleado registrado exitosamente!', data);
-        // Recarga la lista de Empleados para mostrar el nuevo
-        this.listarProductos(); 
+        console.log('Producto creado exitosamente!', data);
+        // Recarga la lista de productos para mostrar el nuevo
+        this.listarEmpleados(); 
         // Limpia el formulario
-        this.nuevoEmpleado = { nombre: '', apellido: '', correo: '', salario: 0.0 };
+        this.nuevoEmpleado = { nombre: '', precio: 0.0, categoria_id: 1 };
       },
-      error: (err) => console.error('Error al Registrar Empleado', err)
+      error: (err) => console.error('Error al crear producto', err)
     });
   }
 

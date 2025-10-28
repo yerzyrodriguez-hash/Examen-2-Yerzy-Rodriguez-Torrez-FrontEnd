@@ -1,0 +1,80 @@
+/* Contenedor principal para centrar y ordenar */
+.contenedor {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+h2 {
+  border-bottom: 2px solid #0d6efd; /* Azul de Bootstrap */
+  padding-bottom: 5px;
+  color: #0d6efd;
+}
+
+/* Estilos para el formulario simple */
+.form-simple {
+  display: flex;
+  flex-wrap: wrap; /* Para que se ajuste en móviles */
+  gap: 10px; /* Espacio entre elementos */
+  margin-bottom: 20px;
+}
+
+.form-simple input {
+  flex: 1; /* Hace que los inputs crezcan */
+  min-width: 150px; /* Ancho mínimo */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-simple button {
+  padding: 10px 20px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-simple button:hover {
+  background-color: #0b5ed7;
+}
+
+/* Estilos para la tabla bonita */
+.tabla-bonita {
+  width: 100%;
+  border-collapse: collapse; /* Bordes limpios */
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/* Encabezados de la tabla */
+.tabla-bonita thead tr {
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+.tabla-bonita th {
+  padding: 12px 15px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Cuerpo de la tabla */
+.tabla-bonita tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-bonita td {
+  padding: 12px 15px;
+}
+
+/* Efecto al pasar el mouse sobre una fila */
+.tabla-bonita tbody tr:hover {
+  background-color: #f9f9f9;
+}

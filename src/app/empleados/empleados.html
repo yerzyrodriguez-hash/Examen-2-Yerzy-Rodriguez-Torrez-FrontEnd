@@ -1,1 +1,38 @@
-<app-empleados></app-empleados>
+<div class="contenedor">
+  
+  <h2>Registrar Empleado</h2>
+  
+  <form (ngSubmit)="guardarEmpleado()" class="form-simple">
+    <input [(ngModel)]="nuevoEmpleado.nombre" name="nombre" placeholder="Nombre" required>
+    <input [(ngModel)]="nuevoEmpleado.apellido" name="apellido" placeholder="Apellido" required>
+    <input [(ngModel)]="nuevoEmpleado.correo" name="correo" placeholder="Correo" required>
+    <input [(ngModel)]="nuevoEmpleado.salario" name="salario" type="number" placeholder="Salario" required>
+    <button type="submit">Guardar</button>
+  </form>
+  
+  <hr>
+  
+  <h2>Lista de Empleados</h2>
+  
+  <table class="tabla-bonita">
+    
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Salario</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let emp of empleados">
+        <td>{{ emp.nombre }}</td>
+        <td>{{ emp.apellido }}</td>
+        <td>{{ emp.correo }}</td>
+        <td>{{ emp.salario }}</td>
+      </tr>
+    </tbody>
+    
+  </table>
+</div>
