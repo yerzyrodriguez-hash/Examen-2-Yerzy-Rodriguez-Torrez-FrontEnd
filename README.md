@@ -1,59 +1,16 @@
-# Examen2FrontEnd
+# QUE APRENDI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+1. ¿Cómo me fue en el examen? Considero que el examen fue desafiante pero exitoso. Logré completar todos los requisitos funcionales: creé el backend en Laravel con su API REST (GET y POST) y la base de datos en MySQL . También construí el frontend en Angular, que consume esta API para listar y registrar nuevos empleados , como se demostró en las capturas de pantalla.
 
-## Development server
 
-To start a local development server, run:
+2. ¿Qué complicaciones tuve? La mayor complicación fue, sin duda, la configuración del frontend en Angular. Tuve numerosos errores que me tomaron tiempo resolver. Los problemas más difíciles fueron:
+Errores de Configuración (SSR/Zone.js): Me enfrenté a errores como NG0908 (Zone.js is required) y el 500 (Internal Server Error), que resultaron ser problemas con el Renderizado del Lado del Servidor (SSR) y cómo interactuaba con el ciclo de vida del componente.
+Errores de Módulos e Importaciones: Tuve dificultades para entender cómo los componentes "standalone" importan otros módulos, como FormsModule o EmpleadosComponent dentro de AppComponent.
+Errores de Plantilla (Duplicación): El problema más confuso fue el contenido duplicado en la página. Me costó identificar que el código estaba en el archivo app.html incorrecto, en lugar de estar solo en empleados.html.
 
-```bash
-ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+3. ¿Qué aprendí en este módulo? Aprendí el flujo completo de una aplicación Full-Stack. En el backend, aprendí a estructurar una API en Laravel, desde la migración y el modelo hasta el controlador y las rutas. En el frontend, aprendí a crear un servicio en Angular para consumir una API externa, a manejar formularios con ngModel y a componer la interfaz de usuario. Lo más importante fue aprender a depurar los errores de Angular leyendo la consola.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+4. ¿Qué haría diferente si lo vuelvo a realizar? Si lo hiciera de nuevo, deshabilitaría el Renderizado del Lado del Servidor (SSR) al crear el proyecto de Angular (ng new --ssr=false). Esto habría evitado la mayoría de los errores complejos (como los 500 Internal Server Error y los de hidratación NG0500) y me habría permitido concentrarme solo en la lógica del formulario y la tabla. También probaría el backend al 100% con Postman antes de escribir una sola línea de frontend.
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
